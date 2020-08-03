@@ -33,18 +33,18 @@ import org.codehaus.mojo.exec.ExecMojo;
  * @version $Id$
  * @since 1.0
  */
-@Mojo( name = "yonyouExec", threadSafe = true, requiresDependencyResolution = ResolutionScope.TEST )
+@Mojo(name = "yonyouExec", threadSafe = true, requiresDependencyResolution = ResolutionScope.TEST)
 public class YonyouExecMojo
-    extends ExecMojo{
+    extends ExecMojo {
 
-  @Parameter( property = "enable", defaultValue = "false")
+  @Parameter(property = "enable", defaultValue = "false")
   protected boolean enable;
 
   @Override
   public void execute() throws MojoExecutionException {
     getLog().info("----------yonyou exec plugin start-------------");
     getLog().info("enable:" + enable);
-    if(enable) {
+    if (enable) {
       super.execute();
     } else {
       getLog().info("-------not exec!--------");

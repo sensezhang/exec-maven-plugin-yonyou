@@ -11,18 +11,18 @@ import org.codehaus.mojo.exec.ExecJavaMojo;
  * @Author: zhangwbin
  * @Date: 2020/3/24
  */
-@Mojo( name = "yongyouJava", threadSafe = true, requiresDependencyResolution = ResolutionScope.TEST )
+@Mojo(name = "yongyouJava", threadSafe = true, requiresDependencyResolution = ResolutionScope.TEST)
 public class YonyouJavaMojo extends ExecJavaMojo {
 
 
-  @Parameter( property = "enable", defaultValue = "false")
+  @Parameter(property = "enable", defaultValue = "false")
   protected boolean enable;
 
   @Override
   public void execute() throws MojoExecutionException, MojoFailureException {
     getLog().info("----------yonyou java plugin start-------------");
     getLog().info("enable:" + enable);
-    if(enable) {
+    if (enable) {
       super.execute();
     } else {
       getLog().info("-------not exec!--------");
